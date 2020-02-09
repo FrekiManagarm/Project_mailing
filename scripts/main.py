@@ -30,14 +30,21 @@ while 1:
         email.sendData()
         time.sleep(60)
 
+
+
 class Translation():
     def __init__(self):
         with open("new_mail", "x") as Mail_data:
             print(type(Mail_data))
         Mail_data = {email.content}
-        fichier = open(".json","wt")
+        fichier = open("new_mail.json","wt")
         fichier.write(json.dumps(Mail_data))
         fichier.close()
+
+class Stock():
+     with open(Mail_data) as Mail_data
+     fichier = Mail_data
+     
 
 
     
@@ -51,44 +58,3 @@ class Translation():
  if __name__ == "__main__":
      main()
 
-import imaplib
-import email
-import json 
-
-with open("/conf.json") as conf:
-    print(type(conf))
-
-email_address = conf.senderMail 
-email_pass = conf.Password 
-
-mail = imaplib.IMAP4_SSL('imap.gmail.com')
-mail.login(email_address, email_pass)
-
-num_of_mail = 0
-
-while True:
-
-    mail.select('inbox')
-
-    type, data = mail.search(None, '(UNSEEN)')
-    mail_ids = data[0]
-    id_list = mail_ids.split()
-
-    if len(id_list) > num_of_mail:
-        print('New Mail Found...\n')
-
-        for i in range(int(id_list[-1]), int(id_list[0]) -1, -1):
-            typ, data = mail.fetch(i, '(RFC822)')
-
-            for response_part in data:
-                if isinstance(response_part, tuple):
-                    msg = email.message_from_string(response_part[1])
-                    email_subject = msg['subject']
-                    email_from = msg['from']
-                    email_body = msg.get_payload()[0].get_payload()
-                    file = open('EMAIL.txt','w')
-                    file.write(email_from)
-                    file.write(email_subject)
-                    file.write(email_body)
-                    file.close()
-        num_of_mail = len(id_list)

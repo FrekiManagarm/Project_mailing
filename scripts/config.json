@@ -1,5 +1,6 @@
 {
     "senderMail": "mathchambaud2000@gmail.com",
     "Password": "Mathieu2018!",
-    "domaineServer": "imap.gmail.com"
+    "domaineServer": "imap.gmail.com",
+    "repertoire": ""
 }
