@@ -7,7 +7,6 @@ with open('/config.json') as config:
 email = Mail()
 # Check d'un nouveau mail toutes les minutes 
 
-def main():
 
 
 class Mail():
@@ -24,23 +23,8 @@ class Mail():
     def sendData(self):
         self.numMessages= self.checkMail()
         #turn the string into packed binary data to send int
-<<<<<<< HEAD
         self.ser.write(struct.pack('B', self.numMessages))  
-        
-def translation():
-         
-
-def main():
     
-    email = Mail()
-    
-    while 1:
-        print('Sending')
-        email.sendData()
-        time.sleep(60)
- 
-if __name__ == "__main__":
-    main()
 
 
 # Ci dessous un essai de conversion du Mail en JSON
@@ -55,18 +39,15 @@ class Translation():
 
 # Ci dessous 
 class Stock():
-     with open('/config.json') as Mail_data
-     fichier = Mail_data.os.path.join(Mail_data.repertoire)
-
-     
-email = Mail()
+    with open('/config.json') as Mail_data:
+        fichier = Mail_data.os.path.join(Mail_data.repertoire)
     
-     while 1:
-         print('Sending')
-         email.sendData()
-         time.sleep(60)
+while 1:
+    print('Sending')
+    email.sendData()
+    time.sleep(60)
  
- if __name__ == "__main__":
-     main()
+if __name__ == "__main__":
+    main()
 
 
