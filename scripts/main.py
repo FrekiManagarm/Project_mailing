@@ -5,8 +5,13 @@ with open('/config.json') as config:
     print(type(config))
 
 email = Mail()
+Mail_data = new Mail_data(os.path.join(config.repertoire), [])
 # Check d'un nouveau mail toutes les minutes 
 
+def main():
+    Mail()
+    Translation()
+    Stock()
 
 
 class Mail():
